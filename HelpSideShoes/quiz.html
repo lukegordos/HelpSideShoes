@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Shoe Recommendation Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        .quiz-option {
+            transition: all 0.3s ease;
+        }
+        .quiz-option:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-option.selected {
+            border-color: #2563eb;
+            background-color: #dbeafe;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="gradient-bg text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-3xl font-bold tracking-tight">Help Side Shoes</div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-blue-200 transition duration-300">Home</a></li>
+                    <li><a href="aboutus.html" class="hover:text-blue-200 transition duration-300">About Us</a></li>
+                    <li><a href="quiz.html" class="hover:text-blue-200 transition duration-300">Shoe Quiz</a></li>
+                    <li><a href="basketball-shoes.html" class="hover:text-blue-200 transition duration-300">Search Shoes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 max-w-4xl">
+        <h1 class="text-4xl font-bold text-blue-900 text-center mb-12 tracking-tight">Basketball Shoe Recommendation Quiz</h1>
+
+        <div id="quiz-container" class="space-y-8">
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What is your sizing preference?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="sizing" data-answer="true-to-size">
+                        True to Size
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="sizing" data-answer="runs-large">
+                        Runs Large
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="sizing" data-answer="slightly-large">
+                        Slightly Large
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="sizing" data-answer="slightly-snug">
+                        Slightly Snug
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What arch support level do you need?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="arch-support" data-answer="high">
+                        High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="arch-support" data-answer="medium">
+                        Medium
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="arch-support" data-answer="low">
+                        Low
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="arch-support" data-answer="minimal">
+                        Minimal
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What ankle support do you prefer?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="ankle-support" data-answer="high">
+                        High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="ankle-support" data-answer="medium">
+                        Medium
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="ankle-support" data-answer="low">
+                        Low
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What shoe width do you require?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="shoe-width" data-answer="standard">
+                        Standard
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="shoe-width" data-answer="wide">
+                        Wide
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="shoe-width" data-answer="narrow">
+                        Narrow
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What type of traction do you need?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="traction" data-answer="indoor">
+                        Indoor Courts
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="traction" data-answer="indoor-outdoor">
+                        Indoor and Outdoor
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="traction" data-answer="outdoor">
+                        Outdoor Courts
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">What comfort level are you looking for?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="comfort" data-answer="very-high">
+                        Very High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="comfort" data-answer="high">
+                        High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="comfort" data-answer="comfortable">
+                        Comfortable
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="comfort" data-answer="firm">
+                        Firm
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6">How important is shoe durability to you?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="durability" data-answer="very-high">
+                        Very High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="durability" data-answer="high">
+                        High
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="durability" data-answer="medium">
+                        Medium
+                    </div>
+                    <div class="quiz-option border rounded-lg p-4 text-center cursor-pointer" data-question="durability" data-answer="good">
+                        Good
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="submit-quiz" class="inline-block px-12 py-4 bg-blue-700 text-white text-xl font-semibold rounded-full hover:bg-blue-800 transition duration-300 shadow-lg hover:shadow-xl">
+                    Get Shoe Recommendations
+                </button>
+            </div>
+        </div>
+
+        <div id="recommendations" class="mt-12 hidden">
+            <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Your Recommended Shoes</h2>
+            <div id="recommendations-grid" class="grid md:grid-cols-3 gap-6">
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/G.T.+CUT+3.png" alt="Nike G.T. Cut 3" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Nike G.T. Cut 3</h3>
+                        <p>True to Size, Moderate Arch Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$245.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Nike PG 6.jpg" alt="Nike Precision 6" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Nike Precision 6</h3>
+                        <p>Lightweight, Low Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$95.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/LeBron Witness 8.jpeg" alt="Nike Lebron Witness 8" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Nike Lebron Witness 8</h3>
+                        <p>Medium Support, Responsive Cushioning</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$130.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Nike Kyrie Infinity.jpeg" alt="Nike Kyrie Infinity" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Nike Kyrie Infinity</h3>
+                        <p>True to Size, High Arch Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$160.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Nike PG 6.jpg" alt="Nike Cosmic Unity 3" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Nike Cosmic Unity 3</h3>
+                        <p>Sustainable Materials, Medium Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$170.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Adidas Trae Young 2.jpg" alt="Adidas Trae Young 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Adidas Trae Young 1</h3>
+                        <p>Lightweight, Low Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$140.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Adidas Dame 8.webp" alt="Adidas Dame 8" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Adidas Dame 8</h3>
+                        <p>High Support, True to Size</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$115.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Adidas Crazy BYW X.avif" alt="Adidas N3XT L3V3L" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Adidas N3XT L3V3L</h3>
+                        <p>Innovative Design, Medium Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$180.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Under Armour Curry 9.webp" alt="Under Armour Curry 9" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Under Armour Curry 9</h3>
+                        <p>True to Size, Very High Injury Prevention</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$200.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/Under Armour Jet '21.jpeg" alt="UA Spawn 4" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">UA Spawn 4</h3>
+                        <p>Low Support, Lightweight Design</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$120.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/giannasfreak6.png" alt="Giannis Freak 6" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Giannis Freak 6</h3>
+                        <p>Runs Slightly Small, High Arch Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$180.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="shoe-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <img src="shoes/lebronxxiicrown.webp" alt="LeBron XXII 'Crown Jewel'" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">LeBron XXII 'Crown Jewel'</h3>
+                        <p>True to Size, High Arch Support</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">$260.00</span>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Help Side Shoes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const shoeDatabase = [
+            { name: 'Nike G.T. Cut 3', sizing: 'true-to-size', archSupport: 'moderate', ankleSupport: 'low', shoeWidth: 'narrow', traction: 'high', comfort: 'comfortable', durability: 'high', price: 245.00, imageUrl: 'shoes/G.T.+CUT+3.png' },
+            { name: 'Nike Precision 6', sizing: 'true-to-size', archSupport: 'low', ankleSupport: 'medium', shoeWidth: 'standard', traction: 'high', comfort: 'high', durability: 'high', price: 95.00, imageUrl: 'shoes/Nike PG 6.jpg"' },
+            { name: 'Nike Lebron Witness 8', sizing: 'true-to-size', archSupport: 'medium', ankleSupport: 'medium', shoeWidth: 'standard', traction: 'high', comfort: 'firm', durability: 'high', price: 130.00, imageUrl: 'shoes/LeBron Witness 8.jpeg' },
+            { name: 'Nike Kyrie Infinity', sizing: 'true-to-size', archSupport: 'high', ankleSupport: 'medium', shoeWidth: 'narrow', traction: 'high', comfort: 'high', durability: 'high', price: 160.00, imageUrl: 'shoes/Nike Kyrie Infinity.jpeg' },
+            { name: 'Adidas Trae Young 1', sizing: 'true-to-size', archSupport: 'low', ankleSupport: 'medium', shoeWidth: 'standard', traction: 'high', comfort: 'moderate', durability: 'high', price: 140.00, imageUrl: 'shoes/Adidas Trae Young 2.jpg' },
+            { name: 'Adidas Dame 8', sizing: 'true-to-size', archSupport: 'medium', ankleSupport: 'medium', shoeWidth: 'standard', traction: 'high', comfort: 'high', durability: 'high', price: 115.00, imageUrl: 'shoes/Adidas Dame 8.webp' },
+            { name: 'Adidas N3XT L3V3L', sizing: 'true-to-size', archSupport: 'medium', ankleSupport: 'medium', shoeWidth: 'wide', traction: 'high', comfort: 'high', durability: 'medium', price: 180.00, imageUrl: 'shoes/Adidas Crazy BYW X.avif' },
+            { name: 'Under Armour Curry 9', sizing: 'true-to-size', archSupport: 'high', ankleSupport: 'high', shoeWidth: 'narrow', traction: 'high', comfort: 'very-high', durability: 'high', price: 200.00, imageUrl: 'shoes/Under Armour Curry 9.webp' },
+            { name: 'UA Spawn 4', sizing: 'true-to-size', archSupport: 'low', ankleSupport: 'medium', shoeWidth: 'wide', traction: 'high', comfort: 'high', durability: 'medium', price: 120.00, imageUrl: 'shoes/Under Armour Jet 21.jpeg' },
+            { name: 'Giannis Freak 6', sizing: 'slightly-snug', archSupport: 'high', ankleSupport: 'high', shoeWidth: 'wide', traction: 'high', comfort: 'very-high', durability: 'very-high', price: 180.00, imageUrl: 'shoes/giannasfreak6.png' },
+            { name: 'LeBron XXII Crown Jewel', sizing: 'true-to-size', archSupport: 'high', ankleSupport: 'high', shoeWidth: 'wide', traction: 'high', comfort: 'very-high', durability: 'high', price: 260.00, imageUrl: 'shoes/lebronxxiicrown.webp' },
+            { name: 'Air Jordan XXXIX Lumière', sizing: 'true-to-size', archSupport: 'medium', ankleSupport: 'medium', shoeWidth: 'narrow', traction: 'high', comfort: 'high', durability: 'medium', price: 260.00, imageUrl: 'shoes/Nike PG 6.jpg' },
+        ];
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizOptions = document.querySelectorAll('.quiz-option');
+            const recommendationsButton = document.getElementById('submit-quiz');
+            const recommendationsSection = document.getElementById('recommendations');
+            const recommendationsGrid = document.getElementById('recommendations-grid');
+            let userSelections = {};
+    
+            quizOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const questionType = this.getAttribute('data-question');
+                    document.querySelectorAll(`.quiz-option[data-question="${questionType}"]`).forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    userSelections[questionType] = this.getAttribute('data-answer');
+                });
+            });
+    
+            recommendationsButton.addEventListener('click', () => {
+                if (Object.keys(userSelections).length === 7) {
+                    const recommendations = recommendShoes(userSelections);
+                    displayRecommendations(recommendations);
+                    recommendationsSection.classList.remove('hidden');
+                } else {
+                    alert('Please complete all sections of the quiz');
+                }
+            });
+    
+            function recommendShoes(selections) {
+                return shoeDatabase.map(shoe => {
+                    let matchCount = Object.keys(selections).reduce((count, key) => {
+                        return count + (shoe[key] === selections[key] ? 1 : 0);
+                    }, 0);
+                    return { shoe, matchCount };
+                })
+                .sort((a, b) => b.matchCount - a.matchCount) 
+                .slice(0, 3) 
+                .map(item => item.shoe);
+            }
+    
+            function displayRecommendations(recommendations) {
+                recommendationsGrid.innerHTML = ''; 
+
+                if (recommendations.length === 0) {
+                    recommendationsGrid.innerHTML = '<p>No recommendations found based on your selections.</p>';
+                    return;
+                }
+
+                recommendations.forEach(shoe => {
+                    const shoeElement = document.createElement('div');
+                    shoeElement.classList.add('shoe-item', 'bg-white', 'rounded-xl', 'shadow-md', 'overflow-hidden', 'hover:shadow-xl', 'transition');
+                    shoeElement.innerHTML = `
+                        <img src="${shoe.imageUrl}" class="w-full h-64 object-cover" alt="${shoe.name}">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">${shoe.name}</h3>
+                            <p>${shoe.sizing.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - ${shoe.archSupport.replace(/\b\w/g, l => l.toUpperCase())} Arch Support</p>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-green-600 font-bold">$${shoe.price.toFixed(2)}</span>
+                                <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                            </div>
+                        </div>
+                    `;
+                    recommendationsGrid.appendChild(shoeElement);
+                });
+            }   
+        });    
+    </script>
+</body>
+</html>
