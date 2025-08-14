@@ -45,7 +45,7 @@ INSERT INTO shoes_recommendations (
 ('Adidas Harden Vol. 7', 'Runs slightly big', 'High', 'Moderate', 'Wide', 'High', 'Very high', 'High', 'High', 180.00, 'Yes'),
 ('Adidas Pro Boost', 'True to size', 'Moderate', 'Moderate', 'Medium', 'High', 'Moderate', 'Moderate', 'Moderate', 120.00, 'No'),
 ('Adidas Crazy BYW X', 'True to size', 'High', 'Moderate', 'Wide', 'High', 'Very high', 'Very high', 'High', 190.00, 'Yes'),
-('Adidas Donovan Mitchell D.O.N. Issue #4', 'True to size', 'Moderate', 'High', 'Medium', 'High', 'Very high', 'High', 'Moderate', 130.00, 'Yes'),
+('Adidas Donovan Mitchell D.O.N. Issue 4', 'True to size', 'Moderate', 'High', 'Medium', 'High', 'Very high', 'High', 'Moderate', 130.00, 'Yes'),
 ('Adidas Exhibit A', 'Runs slightly big', 'Moderate', 'Low', 'Narrow', 'Moderate', 'High', 'Moderate', 'High', 100.00, 'No');
 
 -- Optional: Add some useful indexes

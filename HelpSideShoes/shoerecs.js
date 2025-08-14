@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             id: 20, 
-            name: 'Adidas Donovan Mitchell D.O.N. Issue #4', 
+            name: 'Adidas Donovan Mitchell D.O.N. Issue 4', 
             sizing: 'true-to-size', 
             archSupport: 'moderate', 
             ankleSupportLevel: 'high', 
